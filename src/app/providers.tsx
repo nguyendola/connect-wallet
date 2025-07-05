@@ -6,6 +6,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { mainnet } from "wagmi/chains";
 import { createStorage, cookieStorage } from "wagmi";
 import React, { useEffect, useState, Suspense } from "react";
+import {
+  metaMaskWallet,
+  trustWallet,
+  binanceWallet,
+  okxWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 
 const projectId = "a33697df89d7621b28b9a7a1bd8ef5e9";
 
@@ -15,6 +21,17 @@ const config = getDefaultConfig({
   chains: [mainnet],
   ssr: true,
   storage: createStorage({ storage: cookieStorage }),
+  wallets: [
+    {
+      groupName: "Popular",
+      wallets: [
+        metaMaskWallet,
+        trustWallet,
+        binanceWallet,
+        okxWallet,
+      ],
+    },
+  ],
 });
 
 const queryClient = new QueryClient();
