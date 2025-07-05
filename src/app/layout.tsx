@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
-          <header className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-800">
+          <header className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
             <div className="flex items-center gap-2">
               <Image src="https://www.copute.ai/images/logo.svg" alt="Logo" width={150} height={150} />
             </div>
